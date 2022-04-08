@@ -7,6 +7,7 @@
 * {
     margin: 0;
     padding: 0;
+
 }
 
 h2 {
@@ -101,7 +102,8 @@ div:last-child {
 }
 
 table {
-    width: 60%;
+    width: 70%;
+    margin-left: 300px;
 }
 
 td button {
@@ -126,6 +128,7 @@ td button {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    margin-left:  650px;
 }
 
 #back-button:hover {
