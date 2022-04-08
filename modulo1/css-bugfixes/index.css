@@ -105,6 +105,7 @@ div:last-child {
 table {
     width: 70%;
     margin-left: 300px;
+    font-family: "Roboto", sans-serif;
 }
 
 td button {
@@ -113,11 +114,13 @@ td button {
     height: 30px;
     border-radius: 5px;
     color: black;
+    font-family: "Roboto", sans-serif;
 }
 
 .container-do-search {
     margin-top: 20px;
     height: 100px;
+    
 }
 
 
@@ -130,6 +133,7 @@ td button {
     font-size: 10px;
     color: black;
     margin-left:  650px;
+    font-family: "Roboto", sans-serif;
 }
 
 #back-button:hover {
