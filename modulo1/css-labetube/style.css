@@ -28,9 +28,7 @@ header {
     align-items: center;
     grid-column-start: 1;
     grid-column-end: 3;
-    padding: 0 15px;
-    
-
+    padding: 0 5px;
     background-color:orange;
 }
 
@@ -45,11 +43,12 @@ header > button {
     width: 100%;
     padding: 10px;
     text-align: center;
-    box-shadow: 5px 5px 10px darkgray;  
+    align-items: center; 
 }
 
 .card-detalhefilme{
     width: 80%;
+    height: 40%;
     padding: 10px;
     text-align: flex;
     display: flex;
@@ -70,15 +69,52 @@ nav img {
 
 .card-filme > img{
     width: 100%;
+    text-align: center;
+    align-items: center; 
     
+}
+
+h3{
+    justify-content: center;
+    text-align: center;
+
 }
 footer {
     grid-column-start: 1;
     grid-column-end: 3;
     text-align: center;
-    line-height:  10vh;
-
-
+    line-height:  5vh;
+    bottom: 0;
+    position: fixed;
     background-color: orange;
+    width: 100%;
 }
+
+
+@media screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* celulares */
+    
+    main {
+        grid-template-columns: 1px;
+    }
+ 
+}    
+
+@media screen and (min-device-width : 481px) and (max-device-width : 800px) {
+    /* celulares */
+    
+    main {
+        grid-template-columns: 20rem 20rem 20rem;
+    }
+ 
+}    
+
+@media screen and (min-device-width : 801px) and (max-device-width : 1200px) {
+    /* celulares */
+    
+    main {
+        grid-template-columns: 20rem 20rem 20rem;
+    }
+ 
+}    
 
