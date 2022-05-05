@@ -1,95 +1,37 @@
-import './App.css';
 import React from "react";
+import TelaListaUsuarios from "./components/TelaListaUsuarios";
+import TelaCadastro from "./components/TelaCadastro";
 //import styled from "styled-components";//
-import axios from "axios";
-
+//import axios from "axios";//
 
 export default class App extends React.Component {
   state = {
-    users: {},
-    userEdition: "editButton",
-    inputName: "",
-    inputemail: ""
-  };
-
-  onChangeInput = (event) => {
-    this.setState({ inputName: event.target.value });
-  };
-
-  componentDidMount() {
-    this.getAllUsers();
-    
+    telaAtual: "cadastro"
   }
 
-  getAllUsers = () => {
-    axios
-      .get(
-        "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
-        {
-          headers: {
-            Authorization: "eliz-campelo-aragon"
-          }
-        }
-      )
-      .then((response) => {
-        this.setState({ AllUsers: response.data.result.list });
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  };
+  escolheTela = () =>{
+    switch (this.state.telaAtual) {
+      case "cadastro":
+        return <TelaCadastro irParaLista={this.irParaLista}/>
+      case "lista":
+        return <TelaListaUsuarios irParaCadastro={this.irParaCadastro}/>
+      default:
+        return<div>Erro: Pagina não encontrada!</div>
 
-  changeUserEditionFiel = () => {
-    if (this.state.userEdition === "editButton") {
-      this.setState({ userEdition: "userEditForm" });
-    } else {
-      this.setState({ userEdition: "editButton" });
     }
-  };
-
-  createAllUsers = () => {
-    const body = {
-      name: this.state.inputName
-    };
-
-    axios
-      .post(
-        "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
-        body,
-        {
-          headers: {
-            Authorization: "eliz-campelo-aragon"
-          }
-        }
-      )
-      .then((response) => {
-        this.getPlaylists();
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  };
-
+  }
+  irParaCadastro = () =>{
+    this.setState({telaAtual: "cadastro"})
+  }
+  irParaLista = () =>{
+    this.setState({telaAtual: "lista"})
+  }
   render() {
     return (
-      <main>
-        
-        <section>
-          <label>
-            Nome do Usuario
-            <input value={this.state.inputName} onChange={this.onChangeInput} />
-          </label>
-
-          <button onClick={this.createPlaylist}>Criar Nome</button>
-        </section>
-
-        <section>
-          {this.state.playlists.map((allUsers) => {
-            return <p key={AllUsers.id}>{AllUsers.name}</p>;
-          })}
-        </section>
-      </main>
-    );
+    <div>      
+      {this.escolheTela()}
+    </div>
+    )
   }
 }
 
