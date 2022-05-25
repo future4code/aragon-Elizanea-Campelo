@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState } from "react";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
@@ -16,12 +17,28 @@ import { goToHomePage, goToAdminPage } from "../routes/coordinator";
                 return setEmail(e.target.value);
             case "password":
                 return setPassword(e.target.value)    
+=======
+import {useNavigate} from "react-router-dom";
+import { goToHomePage, goToAdminPage } from "../routes/coordinator";
+
+ function Header(props) {
+
+    const navigate = useNavigate();
+
+    const renderHeader= () => {
+        switch (props.actualPage) {
+            case "home-page":
+                return (<button onClick={()=> goToAdminPage(navigate)}>ENTRAR</button>);
+            case "admin-page":
+                return (<button onClick={()=>goToHomePage(navigate) }>LOGIN</button>)    
+>>>>>>> 0646cb2141675d6ef12f9e2e02de8f7cac9d1afa
                         
             default:
                 return;
                 
         };
     };
+<<<<<<< HEAD
     const login = (e) => {
         e.preventDefault();
         const body = {
@@ -70,6 +87,11 @@ import { goToHomePage, goToAdminPage } from "../routes/coordinator";
     return (<header>
         <h1> LABEX </h1>
         {renderHeader}
+=======
+    return (<header>
+        <h1> LABEX </h1>
+        {renderHeader()}
+>>>>>>> 0646cb2141675d6ef12f9e2e02de8f7cac9d1afa
         </header>);
 };
 export default Header;
