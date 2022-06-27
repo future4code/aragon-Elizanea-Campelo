@@ -1,0 +1,16 @@
+{
+  "name": "package-json",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js Elizanea 43",
+    "operDoisNumeros": "clear && node operacaoDoisNumeros.js 50 2",
+    "addTarefa": "clear && node adicionarTarefa.js Comprar_Leite",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Elizanea Campelo",
+  "license": "ISC"
+}
