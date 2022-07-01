@@ -1,38 +1,57 @@
 // EXEMPLOS DE IMPLEMENTAÇÃO ---------------------------------------------------------------
 
 // EXERCÍCIO 0A
+
+
 function soma(num1, num2) {
-  // implemente sua lógica aqui
+  
+  let soma = num1 + num2  
+  console.log(soma)
   return num1 + num2
 }
+
 
 // EXERCÍCIO 0B
 function imprimeMensagem() {
   // implemente sua lógica aqui
   const mensagem = prompt('Digite uma mensagem!')
-
+  
   console.log(mensagem)
+
+  return imprimeMensagem
 }
 
 // EXERCÍCIOS PARA FAZER ------------------------------------------------------------------
 
 // EXERCÍCIO 01
 function calculaAreaRetangulo() {
-  // implemente sua lógica aqui
+  const largura = Number(prompt("Digite a largura: "))
+  const altura = Number(prompt("Digite a altura: "))
+  areaRetangulo = largura * altura
+  console.log(areaRetangulo)
+  return calculaAreaRetangulo
+
 
 }
 
 // EXERCÍCIO 02
 function imprimeIdade() {
-  // implemente sua lógica aqui
-
+let anoAtual = Number(prompt("Digite o ano atual: "))
+let anoNascimento = Number(prompt("Digite o ano nascimento: "))
+let idade = anoAtual - anoNascimento
+console.log(idade)
+ return  imprimeIdade
 }
 
 // EXERCÍCIO 03
-function calculaIMC(peso, altura) {
-  // implemente sua lógica aqui
+function calculaIMC(peso = Number(prompt("Digite o peso: ")), altura = Number(prompt("Digite a altura: "))) {
+  
+  let IMC = (peso) / (altura) ** 2
+  
+  return  calculaIMC
 
 }
+
 
 // EXERCÍCIO 04
 function imprimeInformacoesUsuario() {
