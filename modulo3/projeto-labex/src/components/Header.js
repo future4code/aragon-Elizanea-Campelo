@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
@@ -16,12 +17,43 @@ import { goToHomePage, goToAdminPage } from "../routes/coordinator";
                 return setEmail(e.target.value);
             case "password":
                 return setPassword(e.target.value)    
+
+import { useState } from "react";
+import axios from "axios";
+
+import {useNavigate} from "react-router-dom";
+import { goToHomePage, goToAdminPage } from "../routes/coordinator";
+
+ function Header() {
+
+    const [email, setEmail] = useState("")
+    const [password,setPassword] = useState("")
+
+
+    const renderHeader= () => {
+        switch (props.actualPage) {
+            case "home-page":
+                return (<button onClick={()=> goToAdminPage(navigate)}>ENTRAR</button>);
+            case "admin-page":
+                return (<button onClick={()=>goToHomePage(navigate) }>LOGIN</button>)    
+
+=======
+    const navigate = useNavigate();
+ 
+    const handleInputValue =(e) =>{
+        switch (e.target.name) {
+            case "email":
+                return setEmail(e.target.value);
+            case "password":
+                return setPassword(e.target.value)    
+
                         
             default:
                 return;
                 
         };
     };
+
     const login = (e) => {
         e.preventDefault();
         const body = {
@@ -31,7 +63,11 @@ import { goToHomePage, goToAdminPage } from "../routes/coordinator";
     
         axios
           .post(
+
+            "https://us-central1-labenu-apis.cloudfunctions.net/labeX/:aluno/login",
+=======
             "https://us-central1-labenu-apis.cloudfunctions.net/labeX/elizanea/login",
+
             body
           )
           .then((res) => {
@@ -67,9 +103,20 @@ import { goToHomePage, goToAdminPage } from "../routes/coordinator";
           <br/>
         <button type={"submit"}>ENTRAR</button>
     </form>)
+
     return (<header>
         <h1> LABEX </h1>
         {renderHeader}
+=======
+    return (<header>
+        <h1> LABEX </h1>
+        {renderHeader()}
+
+=======
+    return (<header>
+        <h1> LABEX </h1>
+        {renderHeader}
+
         </header>);
 };
 export default Header;
