@@ -1,0 +1,90 @@
+import express {REquest, Response} from "express";
+impprt cors from "cors"
+
+
+
+cpnst app = express()
+
+app.use(cors())
+
+app.use(express.json())
+
+app.get("/ping",(req=Request,res:Response)=>{
+    res.send({mensagem: "servidor App funcionando"})
+})
+
+app.listen(3003,()=>{
+console.log("Servidor rodando na porta 3003")
+}
+const afazeres: [
+
+{
+    "userId": 1,
+    "id": 8,
+    "title": "quo adipisci enim quam ut ab",
+    "concluído": verdadeiro
+  },
+  {
+    "userId": 1,
+    "id": 9,
+    "título": "molestiae perspiciatis ipsa",
+    "concluído": falso
+  },
+  {
+    "userId": 2,
+    "id": 23,
+    "título": "et itaque necessitatibus maxime molestiae qui quas velit",
+    "concluído": falso
+  },
+  {
+    "userId": 2,
+    "id": 24,
+    "title": "adipisci non ad dicta qui amet quaerat doloribus ea",
+    "concluído": falso
+  },
+  {
+    "userId": 3,
+    "id": 48,
+    "title": "senta-se repreende omnis quia",
+    "concluído": falso
+  },
+  {
+    "userId": 3,
+    "id": 49,
+    "title": "ut necessitatibus aut maiores debitis oficia blanditiis velit et",
+    "concluído": falso
+  }
+  
+  app.get("/ping",(req=Request,res:Response)=>{
+     const userId=Number(req.params.userId)
+     const resultado = afazeres.filter((afazer)=>{
+     return afazer.userId===userId
+     })
+     return res.send({afazeres:resultado})
+     
+     app.get("/ping",(req=Request,res:Response)=>{
+     const situacao=req.query.concluido
+     return res.send({situacao:situacao})
+     
+     if(situacao!="true" && situacao != "false){
+         
+         return res.send({afazeres:afazeres, situacao:situacao})
+      }
+      
+     if (situacao ==="true"){
+         const resultado = afazeres.filter((afazer) =>{
+         return afazer.concluido ===true
+     })
+     return res.send({afazeres:resultado, situacao:situacao})
+     } else {
+          const resultado = afazeres.filter((afazer)=>{
+          return afazer.concluido === false
+    })
+    return res.send({afazeres:resultado, situacao:situacao})
+    })
+    
+    
+     
+     
+     
+     
