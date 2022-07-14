@@ -1,5 +1,6 @@
 
 
+
 import { useState } from "react";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
@@ -20,6 +21,8 @@ import { goToHomePage, goToAdminPage } from "../routes/coordinator";
                 return setPassword(e.target.value)    
 =======
 =======
+=======
+
 =======
 
 import { useState } from "react";
@@ -50,8 +53,40 @@ import { goToHomePage, goToAdminPage } from "../routes/coordinator";
                 return setEmail(e.target.value);
             case "password":
                 return setPassword(e.target.value)    
+=======
+=======
+=======
 
 
+=======
+import { useState } from "react";
+import axios from "axios";
+
+import {useNavigate} from "react-router-dom";
+import { goToHomePage, goToAdminPage } from "../routes/coordinator";
+
+ function Header() {
+
+    const [email, setEmail] = useState("")
+    const [password,setPassword] = useState("")
+
+
+    const renderHeader= () => {
+        switch (props.actualPage) {
+            case "home-page":
+                return (<button onClick={()=> goToAdminPage(navigate)}>ENTRAR</button>);
+            case "admin-page":
+                return (<button onClick={()=>goToHomePage(navigate) }>LOGIN</button>)    
+
+=======
+    const navigate = useNavigate();
+ 
+    const handleInputValue =(e) =>{
+        switch (e.target.name) {
+            case "email":
+                return setEmail(e.target.value);
+            case "password":
+                return setPassword(e.target.value)  
 =======
 import { useState } from "react";
 import axios from "axios";
