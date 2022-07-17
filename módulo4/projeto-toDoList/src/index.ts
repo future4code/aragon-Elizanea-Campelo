@@ -90,3 +90,43 @@ app.get("/tasks/:taskId/users", async (req: Request, res: Response) => {
     res.status(errorCode).send({ message: error.message })
   }
 })
+
+app.post("/tasks/:taskId/users", async (req:Request,res:Response) => {
+  let errorCode = 400
+
+  try {
+
+    const userId = req.body.userId
+
+    const taskId = Number(req.params.taskId)
+
+    const [ tasks ] = await connection.raw(`
+    SELECT * FROM Tasks
+    WHERE id = ${taskId};
+    `)
+
+    const taskFound = tasks[0]
+
+    if (!taskFound) {
+      errorCode = 404
+      throw new Error("task already exist")
+    }  
+
+    if (taskFound) {
+
+      await connection.raw(`
+      INSERT INTO Responsibles
+      VALUES (${userId},${taskId});
+      `)
+    }  
+
+    res.status(200).send({
+      message:"responsible defined",
+      create: `userId: ${userId}, taskId:${taskId}` 
+      })
+
+
+  } catch (error) {
+    res.status(errorCode).send({message: error.message})
+  }
+})
