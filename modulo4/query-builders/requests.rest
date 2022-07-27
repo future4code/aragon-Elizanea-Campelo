@@ -1,0 +1,38 @@
+### Ping
+GET http://localhost:3003/ping
+
+### Create perfume
+POST http://localhost:3003/perfume
+Content-Type: application/json
+{
+    "name": "Good night Cindy",
+    "brand": "BN Fashion",
+    "price": 4000.50,
+    "ml": 200
+}
+
+### Delete perfume
+DELETE http://localhost:3003/perfume/1658287847016
+
+### Edit perfume - Price
+PUT http://localhost:3003/perfume/1658288978863                 
+Content-Type: application/json
+
+{
+    "price": 8000.00
+}
+
+### Busca por Perfume por Nome e Marca
+GET http://localhost:3003/perfume?name=Good night Cindy&brand=BN Fashion
+
+{
+    "users": [
+        {
+            "id": "1658288978863",
+            "name": "Good night Cindy",
+            "brand": "BN Fashion",
+            "price": 8000,
+            "ml": 200
+        }
+    ]
+}
