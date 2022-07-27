@@ -16,7 +16,11 @@ app.listen(process.env.PORT || 3003, () => {
 app.get("/ping", ping)
 
 // Siga o exemplo do ping acima e monte seus endpoints abaixo!
+<<<<<<< HEAD
 app.get("/users/search", async (req: Request, res: Response) => {
+=======
+app.get("/users", async (req: Request, res: Response) => {
+>>>>>>> a3ce580bd552a2de21162e3d8998fa3408bbe32c
   let errorCode = 400
   try {
     const search = Number(req.query.search)
@@ -37,6 +41,7 @@ app.get("/users/search", async (req: Request, res: Response) => {
   }
 })
 
+<<<<<<< HEAD
 app.get("/tasks/:searchT", async (req: Request, res: Response) => {
   let errorCode = 400
   try {
@@ -51,6 +56,22 @@ app.get("/tasks/:searchT", async (req: Request, res: Response) => {
     const [resultTask] = await connection.raw(`
   SELECT * FROM Users;`)
     res.status(200).send({ tasks: resultTask })
+=======
+app.get("/tasks", async (req: Request, res: Response) => {
+  let errorCode = 400
+  try {
+    const search = req.query.search
+    if (search) {
+
+      const [result] = await connection.raw(`
+  SELECT * FROM Tasks
+  WHERE title LIKE "%${search}%"`)
+      return res.status(200).send({ tasks: result })
+    }
+    const [result] = await connection.raw(`
+  SELECT * FROM Users;`)
+    res.status(200).send({ tasks: result })
+>>>>>>> a3ce580bd552a2de21162e3d8998fa3408bbe32c
 
   } catch (error) {
     res.status(errorCode).send({ mensagem: error.message })
@@ -62,9 +83,15 @@ app.get("/tasks/:taskId/users", async (req: Request, res: Response) => {
   let errorCode = 400
 
   try {
+<<<<<<< HEAD
     const taskId = Number(req.params.taskId)
 
     if (!taskId) {
+=======
+    const taskId = req.params.taskId as string
+
+    if (!taskId || taskId === "") {
+>>>>>>> a3ce580bd552a2de21162e3d8998fa3408bbe32c
       errorCode = 422
       throw new Error(`non-existent ID, enter the correct ID.`)
     }
@@ -89,6 +116,7 @@ app.get("/tasks/:taskId/users", async (req: Request, res: Response) => {
   } catch (error) {
     res.status(errorCode).send({ message: error.message })
   }
+<<<<<<< HEAD
 })
 
 app.post("/tasks/:taskId/users", async (req:Request,res:Response) => {
@@ -132,3 +160,6 @@ app.post("/tasks/:taskId/users", async (req:Request,res:Response) => {
 })
 
 
+=======
+})
+>>>>>>> a3ce580bd552a2de21162e3d8998fa3408bbe32c
