@@ -1,0 +1,40 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+### Endpoint post new user
+POST http://localhost:3003/users
+Content-Type: application/json 
+
+{
+    "email": "labecommerce@email.com",
+    "password":"789521"
+}
+
+### Endpoint get users
+GET http://localhost:3003/users
+
+### Endpoint post new product
+POST http://localhost:3003/products
+Content-Type: application/json 
+
+{
+
+    "name": "Notebook",
+    "price":3000
+
+}
+
+### Endpoint get products
+GET http://localhost:3003/products
+
+
+### Endpoint post purchase
+POST http://localhost:3003/purchases
+Content-Type: application/json 
+
+{
+    "user_id": "1658536655523",
+    "product_id": "1658537865450",
+    "quantity": 10
+}
+
