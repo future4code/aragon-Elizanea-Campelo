@@ -1,0 +1,22 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+### Endpoint 1) Criar turma
+POST http://localhost:3003/class
+Content-Type: application/json
+
+{
+    "name": "Jonathan",
+    "module": "1"
+}
+
+### Endpoint 2) Buscar turmas ativas
+GET  http://localhost:3003/class/active
+
+### Endpoint 3) Mudar turma de módulo
+PUT http://localhost:3003/class/102/module
+Content-Type: application/json 
+
+{   
+    "module":"3"
+}
