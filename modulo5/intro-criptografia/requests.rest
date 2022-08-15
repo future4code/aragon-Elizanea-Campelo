@@ -1,0 +1,39 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+
+### Signup
+POST http://localhost:3003/signup
+Content-Type: application/json
+
+{
+    "nickname": "elizdev",
+    "email": "eliz@email.com",
+    "password": "123456789eliz"
+}
+
+### Login
+POST http://localhost:3003/login
+Content-Type: application/json
+
+{
+    "email": "eliz@email.com",
+    "password": "123456789eliz"
+}
+
+### Get all users (protected)
+GET http://localhost:3003/users?search=
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNlNTAxZTA5LTk0YmUtNDQzMC1hOGQwLThmNDc3YWNmZTEwNCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjAwNzQwNzMsImV4cCI6MTY2MDE2MDQ3M30.OZoW3T8Tq-z8bVjGt6gQjH0-oWLFqy3pyz5mNDzYapk
+
+### Edit user (protected)
+PUT http://localhost:3003/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNlNTAxZTA5LTk0YmUtNDQzMC1hOGQwLThmNDc3YWNmZTEwNCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjAwNzQwNzMsImV4cCI6MTY2MDE2MDQ3M30.OZoW3T8Tq-z8bVjGt6gQjH0-oWLFqy3pyz5mNDzYapk
+Content-Type: application/json
+
+{
+    "nickname": "zazadev"
+}
+
+### Delete user (protected)
+DELETE http://localhost:3003/users/bb9b7ee8-ae4b-4bd1-9bd6-e7e21594399b
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNlNTAxZTA5LTk0YmUtNDQzMC1hOGQwLThmNDc3YWNmZTEwNCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjAwNzQwNzMsImV4cCI6MTY2MDE2MDQ3M30.OZoW3T8Tq-z8bVjGt6gQjH0-oWLFqy3pyz5mNDzYapk
