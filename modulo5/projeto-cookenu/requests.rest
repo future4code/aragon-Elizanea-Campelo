@@ -1,0 +1,42 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+### Signup
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+    "nickname": "Eliz",
+    "email": "eliz@email.com",
+    "password": "123456789"
+}
+
+### Get all recipes
+GET http://localhost:3003/recipes
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkOTMxMjYxLWRjYjYtNDBmNy05MjJhLWYwMWEyMjE1ZjM2MCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjA1ODAzNTgsImV4cCI6MTY2MDY2Njc1OH0.x-Wi2t1WucmxZ1PVDgpBKepJKIMfQ5UC__933nq2Qps
+
+### Recipe Registration
+POST http://localhost:3003/recipes
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkOTMxMjYxLWRjYjYtNDBmNy05MjJhLWYwMWEyMjE1ZjM2MCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjA1ODAzNTgsImV4cCI6MTY2MDY2Njc1OH0.x-Wi2t1WucmxZ1PVDgpBKepJKIMfQ5UC__933nq2Qps
+
+{
+    "title": "Bolo de Rolo",
+    "description": "Bolo de Rolo do Recife"
+}
+
+### Edit recipe
+PUT http://localhost:3003/recipes/f03017bb-2c08-4cdc-bb63-7fbd7cebe01f
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkOTMxMjYxLWRjYjYtNDBmNy05MjJhLWYwMWEyMjE1ZjM2MCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjA1ODAzNTgsImV4cCI6MTY2MDY2Njc1OH0.x-Wi2t1WucmxZ1PVDgpBKepJKIMfQ5UC__933nq2Qps
+Content-Type: application/json
+
+
+### Delete recipe
+DELETE  http://localhost:3003/recipes/f03017bb-2c08-4cdc-bb63-7fbd7cebe01f
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkOTMxMjYxLWRjYjYtNDBmNy05MjJhLWYwMWEyMjE1ZjM2MCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjA1ODAzNTgsImV4cCI6MTY2MDY2Njc1OH0.x-Wi2t1WucmxZ1PVDgpBKepJKIMfQ5UC__933nq2Qps
+### Delete user
+DELETE  http://localhost:3003/users/bb9b7ee8-ae4b-4bd1-9bd6-e7e21594399b
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkOTMxMjYxLWRjYjYtNDBmNy05MjJhLWYwMWEyMjE1ZjM2MCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjA1ODAzNTgsImV4cCI6MTY2MDY2Njc1OH0.x-Wi2t1WucmxZ1PVDgpBKepJKIMfQ5UC__933nq2Qps
+
+### Get all users
+GET http://localhost:3003/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkOTMxMjYxLWRjYjYtNDBmNy05MjJhLWYwMWEyMjE1ZjM2MCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjA1ODAzNTgsImV4cCI6MTY2MDY2Njc1OH0.x-Wi2t1WucmxZ1PVDgpBKepJKIMfQ5UC__933nq2Qps
